@@ -7,8 +7,8 @@ A small command-line tool for calculating the checksum(s) of a file.
 ## Usage
 ```
 Usage: checksum-tool [options...] <file>
--h, --help              Display help info.
---checksum=[algs...]    Checksums to calculate, enter multiple by separating with commas.
-                          Algorithms available: crc32, md5, sha1, sha256.
--i, --info              Display version and license info.
+-h, --help            Display help info.
+--checksum=[algs...]  Checksums to calculate, enter multiple by separating with commas.
+                        Algorithms available: crc32, md5, sha1, sha256.
+-i, --info            Display version and license info.
 ```
