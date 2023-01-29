@@ -1,0 +1,3 @@
+[submodule "hash-library"]
+	path = hash-library
+	url = git@github.com:16BitWonder/hash-library.git
