@@ -12,5 +12,9 @@ Usage: checksum-tool [options...] <file>
                         Algorithms available: crc32, md5, sha1, sha256.
 -i, --info            Display version and license info.
 ```  
+  
+## To Do
+ - Add Sha-512 checksum
+
 Additional Credits:  
 [stbrumme](https://github.com/stbrumme): For their [hash-library](https://github.com/stbrumme/hash-library).
