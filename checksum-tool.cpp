@@ -3,12 +3,17 @@
 #include <algorithm>
 #include <iostream>
 
+// TODO:
+// Rename this file to checksum.cpp
+// Create a header file containing all functions in here
+// Use this as a place to store all functions related to generating checksums off provided file handles to keep it out of main
+
 std::string strToupper(std::string str) {
     std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) { return std::toupper(c); });
     return str;
 }
 
-int main(int argc, char* argv[]) {
+int test(int argc, char* argv[]) {
 
     // create a crc32 hashing object
     CRC32 crc32;
