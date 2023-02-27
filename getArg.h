@@ -1,1 +1,0 @@
-int getArg(char* argv[], int& i);

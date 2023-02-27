@@ -147,7 +147,6 @@
   <ItemGroup>
     <ClCompile Include="checksum.cpp" />
     <ClCompile Include="FileChunkReader.cpp" />
-    <ClCompile Include="getArg.cpp" />
     <ClCompile Include="hash-library\crc32.cpp" />
     <ClCompile Include="hash-library\keccak.cpp" />
     <ClCompile Include="hash-library\md5.cpp" />
@@ -159,7 +158,6 @@
   <ItemGroup>
     <ClInclude Include="checksum.h" />
     <ClInclude Include="FileChunkReader.h" />
-    <ClInclude Include="getArg.h" />
     <ClInclude Include="hash-library\crc32.h" />
     <ClInclude Include="hash-library\hash.h" />
     <ClInclude Include="hash-library\hmac.h" />
