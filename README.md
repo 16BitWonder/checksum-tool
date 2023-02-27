@@ -17,6 +17,7 @@ Usage: checksum-tool [options...] <file>
   
 ## To Do
  - Add Sha-512 checksum
+ - Custom buffer size
 
 Additional Credits:  
 [stbrumme](https://github.com/stbrumme): For their [hash-library](https://github.com/stbrumme/hash-library).

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="checksum-tool.cpp">
+    <ClCompile Include="checksum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="hash-library\crc32.cpp">
@@ -40,6 +40,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="getArg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileChunkReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,6 +72,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="getArg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileChunkReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="checksum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

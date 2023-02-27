@@ -1,5 +1,9 @@
 #include <iostream>
+#include <filesystem>
+#include "FileChunkReader.h"
+#include "checksum.h"
 #include "getArg.h"
+using namespace std;
 
 void printHelp() {
     printf("Usage: checksum-tool [options...] <file>\n\n");
@@ -19,6 +23,11 @@ void printInfo() {
 }
 
 int main(int argc, char* argv[]) {
+
+    if (argc == 1) {
+        printHelp();
+        return 0;
+    }
 
     int argcStep = 1;
     bool crc32, md5, sha1, sha256;
@@ -58,22 +67,33 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    // Use last arg as file, determine that it actually exists.
-    // If it's not a real file then print help and return 1.
-    std::string file = "";
+    FileChunkReader file (argv[argc-1]);
+    if (!file.fileExists()) {
+        printf("Could not open file: %s\n\n", argv[argc-1]);
+        printHelp();
+        return 1;
+    }
 
     if (crc32) {
-        // Calculate crc32 and print it
+        cout << "CRC32: " + generateCrc32(file) << endl;
     }
     if (md5) {
-        // Calculate MD5 and print it
+        if (file.isEOF())
+            file.reset();
+        cout << "MD5: " + generateMd5(file) << endl;
     }
     if (sha1) {
-        // Calculate SHA-1 and print it
+        if (file.isEOF())
+            file.reset();
+        cout << "SHA-1: " + generateSha1(file) << endl;
     }
     if (sha256) {
-        // Calculate SHA-256 and print it
+        if (file.isEOF())
+            file.reset();
+        cout << "SHA-256: " + generateSha256(file) << endl;
     }
+    file.close();
+
     printf("\nDone!\n");
 
     return 0;

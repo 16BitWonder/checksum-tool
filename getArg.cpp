@@ -1,10 +1,12 @@
 #include <iostream>
+#include "getArg.h"
+using namespace std;
 
 int getArg(char* argv[], int &i) {
 
     int ret = -1;
 
-    std::string currentArg = argv[i];
+    string currentArg = argv[i];
 
     if (currentArg == "-h" || currentArg == "--help")
         ret = 0;
