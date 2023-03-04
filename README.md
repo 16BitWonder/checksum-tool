@@ -15,5 +15,8 @@ Usage: checksum-tool [options...] <file>
 --sha256              Calculate SHA-256.
 ```  
 
+## To Do
+ - Progress indicator for current checksum
+
 Additional Credits:  
 [stbrumme](https://github.com/stbrumme): For their [hash-library](https://github.com/stbrumme/hash-library).
