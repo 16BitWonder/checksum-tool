@@ -1,6 +1,6 @@
 # checksum-tool
 
-![License](https://img.shields.io/github/license/16BitWonder/checksum-tool)
+![License](https://img.shields.io/badge/License-GPLv2-blue.svg)
 
 A small command-line tool for calculating the checksum(s) of a file.
 
