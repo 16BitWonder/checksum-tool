@@ -11,7 +11,7 @@ class FileChunkReader {
         FileChunkReader(const char* fileName);
 
         bool fileExists();
-        bool getNextChunk(char* &buffer, int buffSize, streamsize &bytesRead);
+        void getNextChunk(char* &buffer, int buffSize, streamsize &bytesRead);
         bool isEOF();
         void reset();
         bool close();

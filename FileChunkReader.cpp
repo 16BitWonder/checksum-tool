@@ -21,12 +21,10 @@ bool FileChunkReader::fileExists() {
 // @param buffer The buffer to update
 // @param buffSize The size of <buffer>
 // @param bytesRead The number of bytes read into <buffer>
-// @return true if read was successful, false otherwise
-bool FileChunkReader::getNextChunk(char* &buffer, int buffSize, streamsize &bytesRead) {
+void FileChunkReader::getNextChunk(char* &buffer, int buffSize, streamsize &bytesRead) {
     m_fileStream.read(buffer, buffSize);
     bytesRead = m_fileStream.gcount();
-    bool tmp = m_fileStream.eofbit;
-    return tmp; //Change this to return if successful read
+    return; 
 }
 
 // Checks whether m_fileStream has reached EOF
