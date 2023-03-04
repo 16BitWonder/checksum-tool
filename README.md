@@ -14,10 +14,6 @@ Usage: checksum-tool [options...] <file>
 --sha1                Calculate SHA-1.
 --sha256              Calculate SHA-256.
 ```  
-  
-## To Do
- - Add Sha-512 checksum
- - Custom buffer size
 
 Additional Credits:  
 [stbrumme](https://github.com/stbrumme): For their [hash-library](https://github.com/stbrumme/hash-library).
