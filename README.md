@@ -18,5 +18,5 @@ Usage: checksum-tool [options...] <file>
 ## To Do
  - Progress indicator for current checksum
 
-Additional Credits:  
+## Additional Credits:  
 [stbrumme](https://github.com/stbrumme): For their [hash-library](https://github.com/stbrumme/hash-library).
