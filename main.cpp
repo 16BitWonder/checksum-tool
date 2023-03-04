@@ -4,6 +4,8 @@
 #include "checksum.h"
 using namespace std;
 
+string const version = "1.0.0";
+
 void printHelp() {
     printf("Usage: checksum-tool [options...] <file>\n\n");
     printf("-h, --help            Display help info.\n");
@@ -15,7 +17,7 @@ void printHelp() {
 }
 
 void printInfo() {
-    printf("checksum-tool v1.0\n\n");
+    printf("checksum-tool v%s\n\n", version);
     printf("Licenses:\n");
     printf("checksum-tool: GPL v2.0\n");
     printf("hash-library:  zlib\n");
