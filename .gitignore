@@ -9,6 +9,9 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.o
+checksum-tool
+checksum-tool.exe
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

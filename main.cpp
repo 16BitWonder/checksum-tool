@@ -4,7 +4,7 @@
 #include "checksum.h"
 using namespace std;
 
-char const version[6] = "1.0.1";
+char const version[6] = "1.0.2";
 
 void printHelp() {
     printf("Usage: checksum-tool [options...] <file>\n\n");
