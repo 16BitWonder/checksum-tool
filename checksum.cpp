@@ -1,4 +1,4 @@
-#include "checksum.h"
+#include "checksum.hpp"
 
 int bufferSize = 67108864; // 64MB
 

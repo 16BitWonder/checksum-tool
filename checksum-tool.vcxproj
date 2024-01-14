@@ -156,8 +156,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="checksum.h" />
-    <ClInclude Include="FileChunkReader.h" />
     <ClInclude Include="hash-library\crc32.h" />
     <ClInclude Include="hash-library\hash.h" />
     <ClInclude Include="hash-library\hmac.h" />

@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <iostream>
-#include "FileChunkReader.h"
+#include "FileChunkReader.hpp"
 #include "crc32.h"
 #include "md5.h"
 #include "sha1.h"

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <filesystem>
-#include "FileChunkReader.h"
-#include "checksum.h"
+#include "FileChunkReader.hpp"
+#include "checksum.hpp"
 using namespace std;
 
 char const version[6] = "1.0.2";

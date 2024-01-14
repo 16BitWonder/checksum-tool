@@ -68,11 +68,5 @@
     <ClInclude Include="hash-library\sha256.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FileChunkReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="checksum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
