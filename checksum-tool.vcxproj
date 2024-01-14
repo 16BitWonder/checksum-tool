@@ -156,6 +156,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="checksum.hpp" />
+    <ClInclude Include="FileChunkReader.hpp" />
     <ClInclude Include="hash-library\crc32.h" />
     <ClInclude Include="hash-library\hash.h" />
     <ClInclude Include="hash-library\hmac.h" />
@@ -164,6 +166,9 @@
     <ClInclude Include="hash-library\sha1.h" />
     <ClInclude Include="hash-library\sha256.h" />
     <ClInclude Include="hash-library\sha3.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
