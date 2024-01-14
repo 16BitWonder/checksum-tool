@@ -68,5 +68,19 @@
     <ClInclude Include="hash-library\sha256.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="checksum.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileChunkReader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include=".gitignore" />
+    <None Include=".gitmodules" />
+    <None Include="hash-library-LICENSE" />
+    <None Include="LICENSE" />
+    <None Include="README.md" />
   </ItemGroup>
 </Project>
