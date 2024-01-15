@@ -1,36 +1,24 @@
 #include "FileChunkReader.hpp"
 
-string m_fileName;
-ifstream m_fileStream;
-
 // Constructor
 // @param fileName The name of the file being opened
-FileChunkReader::FileChunkReader(const char* fileName)
-{
+FileChunkReader::FileChunkReader(const char* fileName) {
     m_fileName = fileName;
-    m_fileStream.open(m_fileName, fstream::in|ifstream::binary);
-}
-
-// Checks if the file exists
-// @return true if file exists, false otherwise
-bool FileChunkReader::fileExists() {
-    return m_fileStream.is_open();
+    m_fileStream.open(m_fileName, std::fstream::in|std::ifstream::binary);
+    if (fileExists()) {
+        std::filesystem::path p(fileName);
+        m_fileSize = std::filesystem::file_size(p);
+    }
 }
 
 // Updates provided buffer with the next chunk of the file and how many bytes were read into it
 // @param buffer The buffer to update
 // @param buffSize The size of <buffer>
 // @param bytesRead The number of bytes read into <buffer>
-void FileChunkReader::getNextChunk(char* &buffer, int buffSize, streamsize &bytesRead) {
+void FileChunkReader::getNextChunk(char* &buffer, int buffSize, std::streamsize &bytesRead) {
     m_fileStream.read(buffer, buffSize);
     bytesRead = m_fileStream.gcount();
     return; 
-}
-
-// Checks whether m_fileStream has reached EOF
-// @return true if EOF, false otherwise
-bool FileChunkReader::isEOF() {
-    return m_fileStream.eof();
 }
 
 // Resets m_fileBuffer to the start of the file

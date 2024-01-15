@@ -1,19 +1,21 @@
 #pragma once
+#include <filesystem>
 #include <fstream>
-using namespace std;
 
 class FileChunkReader {
     private:
-        string m_fileName;
-        ifstream m_fileStream;
+        std::string m_fileName;
+        unsigned long long int m_fileSize = 0;
+        std::ifstream m_fileStream;
 
     public:
         FileChunkReader(const char* fileName);
 
-        bool fileExists();
-        void getNextChunk(char* &buffer, int buffSize, streamsize &bytesRead);
-        bool isEOF();
+        bool fileExists() { return m_fileStream.is_open(); }
+        void getNextChunk(char* &buffer, int buffSize, std::streamsize &bytesRead);
+        unsigned long long int getFileSize() { return m_fileSize; }
+        bool isEOF() { return m_fileStream.eof(); }
         void reset();
         bool close();
-        string getFileName() { return m_fileName; }
+        std::string getFileName() { return m_fileName; }
 };

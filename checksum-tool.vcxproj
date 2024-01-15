@@ -154,6 +154,7 @@
     <ClCompile Include="hash-library\sha256.cpp" />
     <ClCompile Include="hash-library\sha3.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ProgressIndicator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="checksum.hpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="hash-library\sha1.h" />
     <ClInclude Include="hash-library\sha256.h" />
     <ClInclude Include="hash-library\sha3.h" />
+    <ClInclude Include="ProgressIndicator.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

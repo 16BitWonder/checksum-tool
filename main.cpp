@@ -1,33 +1,30 @@
-#include <iostream>
-#include <filesystem>
 #include "FileChunkReader.hpp"
 #include "checksum.hpp"
-using namespace std;
 
-char const version[6] = "1.0.2";
+std::string version = "1.0.2";
 
 void printHelp() {
-    printf("Usage: checksum-tool [options...] <file>\n\n");
-    printf("-h, --help            Display help info.\n");
-    printf("-i, --info            Display version and license info.\n");
-    printf("--crc32               Calculate CRC32.\n");
-    printf("--md5                 Calculate MD5.\n");
-    printf("--sha1                Calculate SHA-1.\n");
-    printf("--sha256              Calculate SHA-256.\n");
+    std::cout << "Usage: checksum-tool [options...] <file>" << std::endl << std::endl;
+    std::cout << "-h, --help            Display help info." << std::endl;
+    std::cout << "-i, --info            Display version and license info." << std::endl;
+    std::cout << "--crc32               Calculate CRC32." << std::endl;
+    std::cout << "--md5                 Calculate MD5." << std::endl;
+    std::cout << "--sha1                Calculate SHA-1." << std::endl;
+    std::cout << "--sha256              Calculate SHA-256." << std::endl;
 }
 
 void printInfo() {
-    printf("checksum-tool v%s\n\n", version);
-    printf("Licenses:\n");
-    printf("checksum-tool: GPL v2.0\n");
-    printf("hash-library:  zlib\n");
+    std::cout << "checksum-tool v" << version << std::endl << std::endl;
+    std::cout << "Licenses:" << std::endl;
+    std::cout << "checksum-tool: GPL v2.0" << std::endl;
+    std::cout << "hash-library:  zlib" << std::endl;
 }
 
 int getArg(char* argv[], int& i) {
 
     int ret = -1;
 
-    string currentArg = argv[i];
+    std::string currentArg = argv[i];
 
     if (currentArg == "-h" || currentArg == "--help")
         ret = 0;
@@ -83,7 +80,7 @@ int main(int argc, char* argv[]) {
                 break;
             default:
                 if (argcStep != argc) {
-                    printf("Unrecognized option: %s\n\n", argv[argcStep - 1]);
+                    std::cout << "Unrecognized option: " << argv[argcStep - 1] << std::endl << std::endl;
                     printHelp();
                     return 1;
                 }
@@ -91,34 +88,34 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    FileChunkReader file (argv[argc-1]);
+    FileChunkReader file (argv[argc - 1]);
     if (!file.fileExists()) {
-        printf("Could not open file: %s\n\n", argv[argc-1]);
+        std::cout << "Could not open file: " << argv[argc - 1] << std::endl << std::endl;
         printHelp();
         return 1;
     }
 
     if (crc32) {
-        cout << "CRC32: " + generateCrc32(file) << endl;
+        std::cout << generateChecksum(file, CHECKSUM_CRC32) << std::endl;
     }
     if (md5) {
         if (file.isEOF())
             file.reset();
-        cout << "MD5: " + generateMd5(file) << endl;
+        std::cout << generateChecksum(file, CHECKSUM_MD5) << std::endl;
     }
     if (sha1) {
         if (file.isEOF())
             file.reset();
-        cout << "SHA-1: " + generateSha1(file) << endl;
+        std::cout << generateChecksum(file, CHECKSUM_SHA1) << std::endl;
     }
     if (sha256) {
         if (file.isEOF())
             file.reset();
-        cout << "SHA-256: " + generateSha256(file) << endl;
+        std::cout << generateChecksum(file, CHECKSUM_SHA256) << std::endl;
     }
     file.close();
 
-    printf("\nDone!\n");
+    std::cout << std::endl << "Done!" << std::endl;
 
     return 0;
 }
