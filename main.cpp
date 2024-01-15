@@ -1,7 +1,7 @@
 #include "FileChunkReader.hpp"
 #include "checksum.hpp"
 
-std::string version = "1.0.2";
+std::string version = "1.1.0";
 
 void printHelp() {
     std::cout << "Usage: checksum-tool [options...] <file>" << std::endl << std::endl;
